@@ -14,13 +14,14 @@
 
 ## 技术栈
 
-- React 18
-- TypeScript
-- Three.js
-- React Three Fiber
-- @react-three/drei
-- @react-three/postprocessing
-- Vite
+- React 19.2
+- TypeScript 5.9
+- Three.js 0.181
+- React Three Fiber 9.4
+- @react-three/drei 10.7
+- @react-three/postprocessing 3.0
+- maath 0.10
+- Vite 7.2
 
 ## 快速开始
 
@@ -81,7 +82,7 @@ pnpm gp        # 仅暂存 + 推送
 
 ### 技术栈
 
-React 18 + TypeScript + three.js 0.169 + @react-three/fiber + @react-three/drei + @react-three/postprocessing + maath（缓动动画）
+React 19 + TypeScript 5.9 + Three.js 0.181 + @react-three/fiber 9.4 + @react-three/drei 10.7 + @react-three/postprocessing 3.0 + maath 0.10（缓动动画）
 
 ### 一、核心交互与状态设计
 
