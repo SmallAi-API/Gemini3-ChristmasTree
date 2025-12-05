@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm outdated)"
+      "Bash(pnpm outdated)",
+      "Bash(pnpm add react-router-dom)",
+      "Bash(pnpm add -D tailwindcss postcss autoprefixer)",
+      "Bash(pnpm dlx tailwindcss init -p)",
+      "Bash(pnpm add @splinetool/runtime @splinetool/react-spline framer-motion clsx tailwind-merge class-variance-authority)",
+      "Bash(pnpm add -D @tailwindcss/postcss @tailwindcss/vite)",
+      "Bash(pnpm add postprocessing)",
+      "Bash(pnpm add @mediapipe/hands @mediapipe/camera_utils @mediapipe/drawing_utils)",
+      "Bash(if [ ! -d \"d:/prompt-3D/public/hdri\" ])",
+      "Bash(then mkdir -p \"d:/prompt-3D/public/hdri\")",
+      "Bash(fi)",
+      "Bash(curl -L -o \"d:/prompt-3D/public/hdri/potsdamer_platz_1k.hdr\" \"https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/potsdamer_platz_1k.hdr\")"
     ],
     "deny": [],
     "ask": []

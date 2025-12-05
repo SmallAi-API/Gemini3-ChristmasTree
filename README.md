@@ -1,31 +1,98 @@
-# Gemini3 Christmas Tree
+<div align="center">
 
-基于 React Three Fiber 的交互式 3D 圣诞树可视化项目。
+# 🌌 SmallAi React 3D
 
-![Preview](preview.gif)
+**基于 React Three Fiber 的沉浸式 3D 交互体验画廊**
 
-## 特性
+[![React](https://img.shields.io/badge/React-19.2-61dafb?logo=react)](https://react.dev/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.181-black?logo=three.js)](https://threejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-7-646cff?logo=vite)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
-- 粒子聚散动画 - 点击按钮在圣诞树和散落粒子之间切换
-- 后期处理特效 - Bloom 辉光、Noise 噪点、Vignette 暗角
-- 背景音乐 - 支持自动播放和手动控制
-- 飘落雪花 - 自定义 GLSL 着色器实现
-- 交互控制 - 鼠标拖拽旋转、滚轮缩放
+[🚀 在线演示](https://react3d.smallai.asia) · [📖 文档](#生成提示词---圣诞树-christmas-tree) · [🐛 反馈问题](https://github.com/smallai/react-3d/issues)
 
-## 技术栈
+</div>
 
-- React 19.2
-- TypeScript 5.9
-- Three.js 0.181
-- React Three Fiber 9.4
-- @react-three/drei 10.7
-- @react-three/postprocessing 3.0
-- maath 0.10
-- Vite 7.2
+---
 
-## 快速开始
+## ✨ 特性
+
+### 🎄 圣诞树 (Christmas Tree)
+
+| 特性            | 描述                                   |
+| --------------- | -------------------------------------- |
+| 🎯 粒子聚散动画 | 3000+ 粒子在圣诞树与散落状态间平滑切换 |
+| 🌟 后期处理特效 | Bloom 辉光、Noise 噪点、Vignette 暗角  |
+| 🎵 背景音乐     | 自动播放 + 手动控制，浏览器策略兼容    |
+| ❄️ 飘落雪花     | 自定义 GLSL 着色器实现                 |
+| 🖱️ 交互控制     | 鼠标拖拽旋转、滚轮缩放                 |
+
+### 🕳️ 黑洞 (Gargantua)
+
+| 特性          | 描述                                             |
+| ------------- | ------------------------------------------------ |
+| 🔥 吸积盘光环 | 橙红色旋转光盘 + 引力透镜弯曲效果                |
+| 💫 光子环     | 多层极亮白色细环，toneMapped=false 过曝          |
+| 🌀 粒子物质流 | 3000 粒子螺旋下落被吞噬                          |
+| ⭐ 扭曲星空   | 5000 星点被引力弯曲的背景星场                    |
+| 🎬 电影级后期 | Bloom + 色差 + 暗角随动画阶段动态变化            |
+| 🖐️ 手势识别   | MediaPipe 实时检测：握拳/捏合/张开               |
+| 🚀 坠入动画   | attraction → acceleration → crossing → emergence |
+
+---
+
+## 🛠️ 技术栈
+
+<table>
+<tr>
+<td align="center" width="96">
+<img src="https://skillicons.dev/icons?i=react" width="48" height="48" alt="React" />
+<br>React 19
+</td>
+<td align="center" width="96">
+<img src="https://skillicons.dev/icons?i=ts" width="48" height="48" alt="TypeScript" />
+<br>TypeScript
+</td>
+<td align="center" width="96">
+<img src="https://skillicons.dev/icons?i=threejs" width="48" height="48" alt="Three.js" />
+<br>Three.js
+</td>
+<td align="center" width="96">
+<img src="https://skillicons.dev/icons?i=vite" width="48" height="48" alt="Vite" />
+<br>Vite 7
+</td>
+<td align="center" width="96">
+<img src="https://skillicons.dev/icons?i=tailwind" width="48" height="48" alt="Tailwind" />
+<br>Tailwind 4
+</td>
+</tr>
+</table>
+
+**核心依赖：**
+
+- **3D 渲染**：Three.js 0.181 + React Three Fiber 9.4 + @react-three/drei 10.7
+- **后期处理**：@react-three/postprocessing 3.0 (Bloom, ChromaticAberration, Vignette)
+- **动画**：maath 0.10 (easing.damp) + framer-motion
+- **手势识别**：MediaPipe Hands
+- **3D 嵌入**：Spline (@splinetool/react-spline)
+
+---
+
+## 🚀 快速开始
+
+### 环境要求
+
+- Node.js >= 18
+- pnpm >= 8
+
+### 安装运行
 
 ```bash
+# 克隆仓库
+git clone https://github.com/smallai/react-3d.git
+cd react-3d
+
 # 安装依赖
 pnpm install
 
@@ -34,37 +101,67 @@ pnpm dev
 
 # 构建生产版本
 pnpm build
+
+# 预览构建产物
+pnpm preview
 ```
 
-## 项目结构
+访问 http://localhost:5173 查看效果
+
+---
+
+## 📁 项目结构
 
 ```
 src/
-├── App.tsx              # 主场景：灯光、相机、后期处理
-└── components/
-    ├── ChristmasTree.tsx  # 圣诞树聚合组件
-    ├── Foliage.tsx        # 树叶粒子
-    ├── Ornaments.tsx      # 装饰物 (彩球、星星、礼物等)
-    ├── Floor.tsx          # 雪花地板
-    ├── FloatingSnow.tsx   # 飘落雪花
-    └── Background.tsx     # 背景星尘
-```
-
-## Git 快捷命令
-
-```bash
-pnpm feat      # feat: update 提交并推送
-pnpm fix       # fix: update 提交并推送
-pnpm docs      # docs: update 提交并推送
-pnpm chore     # chore: update 提交并推送
-pnpm gp        # 仅暂存 + 推送
+├── App.tsx                  # 路由入口 (HashRouter + React.lazy)
+├── pages/
+│   ├── Home.tsx             # 画廊首页 (Spline 3D 场景)
+│   ├── Christmas.tsx        # 圣诞树场景
+│   └── BlackHole.tsx        # 黑洞场景 + 手势控制
+├── components/
+│   ├── ChristmasTree.tsx    # 圣诞树聚合组件
+│   ├── Foliage.tsx          # 树叶粒子 (Points + GLSL)
+│   ├── Ornaments.tsx        # 装饰物 (InstancedMesh)
+│   ├── FloatingSnow.tsx     # 飘落雪花
+│   ├── blackhole/           # 黑洞组件 (barrel export)
+│   │   ├── EventHorizon     # 事件视界
+│   │   ├── AccretionDisk    # 吸积盘
+│   │   ├── PhotonRing       # 光子环
+│   │   └── ...
+│   └── ui/                  # 通用 UI 组件
+├── hooks/
+│   └── useHandGesture.ts    # MediaPipe 手势识别 Hook
+└── lib/
+    └── utils.ts             # cn() 工具函数
 ```
 
 ---
 
-## 生成提示词 (Prompt)
+## 🎮 交互说明
 
-以下是用于生成此项目的 AI 提示词：
+### 圣诞树场景
+
+| 操作    | 效果     |
+| ------- | -------- |
+| 🖱️ 拖拽 | 旋转视角 |
+| 🔘 滚轮 | 缩放距离 |
+| 🔘 按钮 | 聚散切换 |
+
+### 黑洞场景
+
+| 操作         | 效果         |
+| ------------ | ------------ |
+| 🖱️ 拖拽      | 环绕观察     |
+| 🔘 滚轮      | 缩放 (6-50)  |
+| 👆 双击      | 坠入黑洞     |
+| ✊ 握拳      | 发射引力波   |
+| 🤏 捏合      | 控制旋转速度 |
+| ✋ 张开 1 秒 | 触发坠入动画 |
+
+---
+
+## 生成提示词 - 圣诞树 (Christmas Tree)
 
 ### 角色设定
 
@@ -198,6 +295,196 @@ wave = sin(time*0.5 + i) * weight * (1-mix)
 
 ---
 
-## 许可证
+## 生成提示词 - 黑洞 (Gargantua)
 
-MIT License
+### 角色设定
+
+你是一名精通 React Three Fiber 和 GLSL 着色器的 3D 可视化工程师。
+
+### 任务目标
+
+实现一个《星际穿越》风格的黑洞展示页面，追求视觉震撼而非物理精确。
+
+### 整体气质要求
+
+- 主色系：深空黑 + 橙红吸积盘 + 白热光子环
+- 电影感引力透镜效果
+- 宇宙尺度的庄严与敬畏感
+
+### 技术栈
+
+React 19 + TypeScript + Three.js 0.181 + @react-three/fiber 9.4 + @react-three/drei 10.7 + @react-three/postprocessing 3.0 + MediaPipe Hands（手势识别）
+
+### 一、视觉构成
+
+```
+场景从外到内：
+1. 深空星云背景 (Starfield)
+2. 螺旋下落的粒子流 (ParticleStream)
+3. 橙红色旋转吸积盘 + 上下弯曲光弧 (AccretionDisk)
+4. 极亮白色光子环 (PhotonRing)
+5. 中心绝对黑暗的事件视界 (EventHorizon)
+6. 引力波涟漪效果 (GravityWave)
+```
+
+### 二、核心组件
+
+#### 1. 事件视界 (EventHorizon)
+
+黑色球体 + 菲涅尔边缘光：
+
+```glsl
+// 片段着色器核心
+float fresnel = pow(1.0 - dot(vNormal, vViewDir), 3.0);
+vec3 glow = uGlowColor * fresnel * 0.5;
+gl_FragColor = vec4(glow, 1.0);  // 核心纯黑，边缘橙红光晕
+```
+
+#### 2. 吸积盘 (AccretionDisk) ⭐ 核心视觉
+
+**三层结构**：
+
+- 主盘（y=0）：ringGeometry + 螺旋纹理 shader
+- 上弯光弧（y=0.8）：引力透镜效果
+- 下弯光弧（y=-0.8）：引力透镜效果
+
+**Shader 要点**：
+
+```glsl
+// 螺旋纹理
+float angle = atan(vUv.y - 0.5, vUv.x - 0.5);
+float spiral = sin(angle * 8.0 - dist * 10.0 + uTime * 2.0) * 0.3 + 0.7;
+// 颜色：内白热 → 外橙红
+vec3 color = mix(vec3(1.0, 0.97, 0.88), vec3(1.0, 0.27, 0.0), dist);
+```
+
+#### 3. 光子环 (PhotonRing)
+
+多层极亮细环，toneMapped=false 确保过曝效果：
+
+```tsx
+{
+  [1.3, 1.35, 1.4].map((radius, i) => (
+    <mesh>
+      <torusGeometry args={[radius, 0.02 - i * 0.005, 16, 100]} />
+      <meshBasicMaterial color="#ffffff" toneMapped={false} />
+    </mesh>
+  ));
+}
+```
+
+#### 4. 粒子物质流 (ParticleStream)
+
+3000 粒子螺旋下落，被吞噬后重生：
+
+```typescript
+// 每帧更新：旋转 + 向心下落
+const newTheta = theta + (speed / r) * delta;
+const newR = r - 0.02 * delta * speed;
+if (newR < 1.5) {
+  /* 重生到外圈 */
+}
+```
+
+#### 5. 引力波 (GravityWave)
+
+触发时从中心向外扩散的涟漪效果，使用多层 ring + 透明度衰减。
+
+### 三、多阶段坠入动画
+
+`AnimationPhase` 类型：`idle` → `attraction` → `acceleration` → `crossing` → `emergence`
+
+**后期处理参数随阶段变化**：
+
+| 阶段         | Bloom 强度 | 色差偏移  | 暗角     |
+| ------------ | ---------- | --------- | -------- |
+| idle         | 1.5        | 0.001     | 0.85     |
+| attraction   | +0.5       | +0.002    | +0.1     |
+| acceleration | +3.0       | +0.015    | +0.3     |
+| crossing     | 5~7 (脉动) | 0.02~0.03 | 1.2      |
+| emergence    | 渐弱回归   | 渐弱回归  | 渐弱回归 |
+
+### 四、手势识别交互
+
+基于 MediaPipe Hands 的三种手势：
+
+| 手势    | 检测方式             | 触发效果     |
+| ------- | -------------------- | ------------ |
+| ✊ 握拳 | 4 指弯曲 + 拇指内收  | 发射引力波   |
+| 🤏 捏合 | 拇指-食指距离 < 0.08 | 控制旋转速度 |
+| ✋ 张开 | 持续 1 秒            | 触发坠入动画 |
+
+### 五、配色方案
+
+```typescript
+const palette = {
+  core: "#000000", // 事件视界
+  innerGlow: "#ff6644", // 边缘光
+  diskInner: "#fff8e0", // 内盘（白热）
+  diskOuter: "#ff4400", // 外盘（橙红）
+  photonRing: "#ffffff", // 光子环
+  particles: "#ffaa44", // 粒子
+  background: "#000005", // 深空
+};
+```
+
+### 六、后期处理
+
+```tsx
+<EffectComposer multisampling={0}>  {/* 禁用多重采样优化性能 */}
+  <Bloom luminanceThreshold={0.1} intensity={1.5~5} radius={0.9} mipmapBlur />
+  <ChromaticAberration offset={[0.001~0.02, 0.001~0.02]} />
+  <Vignette offset={0.25} darkness={0.85~1.2} />
+</EffectComposer>
+```
+
+### 七、交互说明
+
+```
+🖱️ 拖拽 - 环绕观察
+🔘 滚轮 - 缩放 (6-50 距离限制)
+🔄 自动旋转 - 缓慢环绕（手势可调速）
+👆 双击 - 触发坠入动画
+✊ 握拳 - 发射引力波
+🤏 捏合 - 控制旋转速度
+✋ 张开1秒 - 坠入黑洞
+```
+
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m 'feat: add amazing feature'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 提交 Pull Request
+
+---
+
+## 🙏 致谢
+
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - React 渲染 Three.js
+- [Drei](https://github.com/pmndrs/drei) - R3F 实用工具集
+- [MediaPipe](https://mediapipe.dev/) - 手势识别
+- [Interstellar](https://www.imdb.com/title/tt0816692/) - 黑洞视觉灵感来源
+
+---
+
+## 📄 许可证
+
+本项目基于 [MIT License](./LICENSE) 开源。
+
+---
+
+<div align="center">
+
+**[⬆ 回到顶部](#-smallai-react-3d)**
+
+Made with ❤️ by [SmallAi](https://smallai.asia)
+
+🤖 本项目由 **Claude 4.5 Opus** + **Gemini 3.0 Pro** 通过提示词工程完成开发
+
+</div>

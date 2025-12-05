@@ -16,7 +16,7 @@
 
 ## 技术栈
 
-React 18 + TypeScript + three.js 0.169 + @react-three/fiber + @react-three/drei + @react-three/postprocessing + maath（缓动动画）
+React 19 + TypeScript + three.js + @react-three/fiber + @react-three/drei + @react-three/postprocessing + maath（缓动动画）
 
 ---
 

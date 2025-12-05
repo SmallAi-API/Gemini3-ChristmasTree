@@ -18,16 +18,29 @@
     "chore": "git add . && git commit -m \"chore: update\" && git push"
   },
   "dependencies": {
+    "@mediapipe/camera_utils": "^0.3.1675466862",
+    "@mediapipe/drawing_utils": "^0.3.1675466124",
+    "@mediapipe/hands": "^0.4.1675469240",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "@react-three/postprocessing": "^3.0.4",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.12.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.25",
     "maath": "^0.10.8",
+    "postprocessing": "^6.38.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
+    "react-router-dom": "^7.10.1",
+    "tailwind-merge": "^3.4.0",
     "three": "0.181.2",
     "uuid": "^13.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/three": "0.181.0",
@@ -35,9 +48,12 @@
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.48.1",
     "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.22",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3",
     "vite": "^7.2.6"
   }

@@ -256,7 +256,13 @@ export default function Ornaments({
     // Faster scatter transition (0.5s) than assemble (0.9s)
     const smoothTime = isTreeShape ? 0.9 : 0.5;
 
-    easing.damp(meshRef.current.userData, "mix", targetState, smoothTime, delta);
+    easing.damp(
+      meshRef.current.userData,
+      "mix",
+      targetState,
+      smoothTime,
+      delta
+    );
     const newMix = meshRef.current.userData.mix;
     const time = state.clock.elapsedTime;
 

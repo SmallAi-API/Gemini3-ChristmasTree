@@ -110,27 +110,19 @@ export default function FloatingSnow({ isTreeShape }: FloatingSnowProps) {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={positions.length / 3}
-          array={positions}
-          itemSize={3}
+          args={[positions, 3]}
         />
         <bufferAttribute
           attach="attributes-size"
-          count={sizes.length}
-          array={sizes}
-          itemSize={1}
+          args={[sizes, 1]}
         />
         <bufferAttribute
           attach="attributes-speed"
-          count={speeds.length}
-          array={speeds}
-          itemSize={1}
+          args={[speeds, 1]}
         />
         <bufferAttribute
           attach="attributes-randomOffset"
-          count={randomOffsets.length / 3}
-          array={randomOffsets}
-          itemSize={3}
+          args={[randomOffsets, 3]}
         />
       </bufferGeometry>
       <shaderMaterial
