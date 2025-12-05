@@ -7,30 +7,38 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gp": "git add . && git push",
+    "feat": "git add . && git commit -m \"feat: update\" && git push",
+    "fix": "git add . && git commit -m \"fix: update\" && git push",
+    "docs": "git add . && git commit -m \"docs: update\" && git push",
+    "style": "git add . && git commit -m \"style: update\" && git push",
+    "refactor": "git add . && git commit -m \"refactor: update\" && git push",
+    "perf": "git add . && git commit -m \"perf: update\" && git push",
+    "chore": "git add . && git commit -m \"chore: update\" && git push"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "three": "0.169.0",
-    "@react-three/fiber": "^8.17.10",
-    "@react-three/drei": "^9.117.0",
-    "@react-three/postprocessing": "^2.16.3",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
+    "@react-three/postprocessing": "^3.0.4",
     "maath": "^0.10.8",
-    "uuid": "^11.0.3"
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "three": "0.181.2",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@types/three": "0.169.0",
-    "@types/uuid": "^10.0.0",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.15.0",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.14",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.1"
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "0.181.0",
+    "@types/uuid": "^11.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
   }
 }

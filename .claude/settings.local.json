@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm outdated)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
