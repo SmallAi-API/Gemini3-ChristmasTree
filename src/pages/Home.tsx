@@ -103,7 +103,9 @@ export default function Home() {
               {/* 卡片内容 */}
               <div className="relative z-10">
                 {/* 图标 */}
-                <span className="text-3xl sm:text-4xl mb-3 sm:mb-4 block">{project.icon}</span>
+                <span className="text-3xl sm:text-4xl mb-3 sm:mb-4 block">
+                  {project.icon}
+                </span>
 
                 {/* 副标题 */}
                 <span className="text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-[0.2em] uppercase text-neutral-600 mb-1 sm:mb-2 block">
@@ -144,11 +146,8 @@ export default function Home() {
 
         {/* 页脚 */}
         <footer className="w-full text-center py-6 sm:py-8 border-t border-white/5">
-          <p className="text-xs sm:text-sm text-neutral-600 tracking-wide">
-            Built with React Three Fiber
-            <span className="mx-2 sm:mx-3 opacity-50">•</span>
-            ARIX Studio © 2024
-          </p>
+          <span className="mx-2 sm:mx-3 opacity-50">•</span>
+          SmallAi © 2025
         </footer>
       </div>
     </div>
